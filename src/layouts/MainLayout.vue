@@ -12,7 +12,8 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          <q-icon name="savings"/>
+          MoneyBalls
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
