@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <h1>Entries Page</h1>
+    <h1>Settings Page</h1>
   </q-page>
 </template>
 
