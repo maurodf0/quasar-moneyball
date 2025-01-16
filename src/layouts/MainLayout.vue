@@ -19,6 +19,7 @@
     class="bg-primary"
     v-model="leftDrawerOpen" 
     :width="250"
+    :breakpoint="767"
     show-if-above 
     bordered>
       <q-list>
