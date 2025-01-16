@@ -49,7 +49,10 @@ const entries = ref([
 
 const currencify = (amount) => {
 
-  const amountFormatted = amount.toLocaleString('it-IT');
+  const amountFormatted = amount.toLocaleString('it-IT', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
   return amountFormatted
 }
 </script>
