@@ -22,6 +22,9 @@
 <script setup>
 //
 import { ref } from 'vue'
+import useCurrency from '../composables/useCurrency';
+
+const { currencify } = useCurrency();
 
 
 const entries = ref([
@@ -46,20 +49,4 @@ const entries = ref([
     amount: 0,
   },
 ]);
-
-const currencify = (amount) => {
-
-  let postNegSymbol = '';
-  amount > 0 ? postNegSymbol = '+' : postNegSymbol = '-';
-
-  const currencySimbol = '€';
-
-  const amountPositive = Math.abs(amount);
-
-  const amountFormatted = amount.toLocaleString('it-IT', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
-  return `${postNegSymbol} ${amountPositive} ${currencySimbol}`
-}
 </script>
