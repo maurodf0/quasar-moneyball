@@ -3,14 +3,13 @@
       <div class="q-pa-md">
     <q-list bordered separator>
       <q-item v-for="entry in entries" :key="entry.id">
-        <q-item-section :class="[
-          { 'text-positive' : entry.amount > 0},
-          { 'text-negative' : entry.amount < 0}
-        ]">
+        <q-item-section :class="useAmountColorClass(entry.amount)">
           {{ entry.name }}
         </q-item-section>
 
-          <q-item-section side>
+          <q-item-section 
+          side
+          :class="useAmountColorClass(entry.amount)">
           {{ currencify(entry.amount) }}
         </q-item-section>
       </q-item>
@@ -26,6 +25,7 @@
 //
 import { ref } from 'vue'
 import useCurrency from '../composables/useCurrency';
+import useAmountColorClass from 'src/composables/useAmountColorClass';
 
 const { currencify } = useCurrency();
 
