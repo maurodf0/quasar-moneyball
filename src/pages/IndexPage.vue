@@ -3,7 +3,10 @@
       <div class="q-pa-md">
     <q-list bordered separator>
       <q-item v-for="entry in entries" :key="entry.id">
-        <q-item-section>
+        <q-item-section :class="[
+          { 'text-positive' : entry.amount > 0},
+          { 'text-negative' : entry.amount < 0}
+        ]">
           {{ entry.name }}
         </q-item-section>
 
