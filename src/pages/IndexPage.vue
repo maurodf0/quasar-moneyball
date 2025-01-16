@@ -49,10 +49,17 @@ const entries = ref([
 
 const currencify = (amount) => {
 
+  let postNegSymbol = '';
+  amount > 0 ? postNegSymbol = '+' : postNegSymbol = '-';
+
+  const currencySimbol = '€';
+
+  const amountPositive = Math.abs(amount);
+
   const amountFormatted = amount.toLocaleString('it-IT', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
-  return amountFormatted
+  return `${postNegSymbol} ${amountPositive} ${currencySimbol}`
 }
 </script>
