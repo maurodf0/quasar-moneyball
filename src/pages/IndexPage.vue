@@ -8,7 +8,7 @@
         </q-item-section>
 
           <q-item-section side>
-          {{ entry.amount }}
+          {{ currencify(entry.amount) }}
         </q-item-section>
       </q-item>
      
@@ -45,5 +45,9 @@ const entries = ref([
     name: 'Unknown',
     amount: 0,
   },
-])
+]);
+
+const currencify = (amount) => {
+  return amount
+}
 </script>
