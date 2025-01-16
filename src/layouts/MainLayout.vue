@@ -17,7 +17,10 @@
 
     <q-drawer
     class="bg-primary"
-    v-model="leftDrawerOpen" show-if-above bordered>
+    v-model="leftDrawerOpen" 
+    :width="250"
+    show-if-above 
+    bordered>
       <q-list>
         <q-item-label 
         header
