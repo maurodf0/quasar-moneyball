@@ -12,17 +12,25 @@
           </q-item-section>
         </q-item>
       </q-list>
-    </div>    
+    </div>
     <q-footer>
       <div class="row q-pa-sm">
         <div class="col">
-         <q-input 
-          placeholder="Name"
-          bg-color="white"
-          outlined></q-input>
+          <q-input 
+          placeholder="Name" 
+          bg-color="white" 
+          outlined 
+          dense />
         </div>
         <div class="col">
-          Amount         
+          <q-input 
+          type="number"
+          step="0.01"
+          class="text-right"
+          placeholder="Amount" 
+          bg-color="white" 
+          outlined 
+          dense />
         </div>
         <div class="col col-auto">
           B
