@@ -13,6 +13,19 @@
         </q-item>
       </q-list>
     </div>    
+    <q-footer>
+      <div class="row">
+        <div class="col">
+         Name
+        </div>
+        <div class="col">
+          Amount         
+        </div>
+        <div class="col">
+          B
+        </div>
+      </div>
+    </q-footer>
   </q-page>
 </template>
 
