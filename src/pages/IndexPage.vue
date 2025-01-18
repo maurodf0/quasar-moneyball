@@ -14,14 +14,17 @@
       </q-list>
     </div>    
     <q-footer>
-      <div class="row">
+      <div class="row q-pa-sm">
         <div class="col">
-         Name
+         <q-input 
+          placeholder="Name"
+          bg-color="white"
+          outlined></q-input>
         </div>
         <div class="col">
           Amount         
         </div>
-        <div class="col">
+        <div class="col col-auto">
           B
         </div>
       </div>
