@@ -14,7 +14,7 @@
       </q-list>
     </div>
     <q-footer>
-      <div class="row q-pa-sm">
+      <div class="row q-pa-sm q-gutter-sm">
         <div class="col">
           <q-input 
           placeholder="Name" 
@@ -33,7 +33,7 @@
           dense />
         </div>
         <div class="col col-auto">
-          B
+          <q-btn round color="primary" icon="add"/>
         </div>
       </div>
     </q-footer>
