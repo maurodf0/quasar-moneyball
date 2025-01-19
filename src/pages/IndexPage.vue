@@ -15,11 +15,11 @@
     </div>
     <q-footer
       class="bg-transparent">
-      <div class="row q-px-md q-py-sm">
+      <div class="row q-mb-sm q-px-md q-py-sm">
         <div class="col text-grey-7 text-h6">Balance: </div>
         <div class="col text-grey-7 text-h6 text-right"> {{ currencify(0) }} </div>
       </div>
-      <div class="row q-pa-sm q-gutter-sm">
+      <div class="row q-pa-sm q-gutter-sm bg-primary">
         <div class="col">
           <q-input 
           placeholder="Name" 
