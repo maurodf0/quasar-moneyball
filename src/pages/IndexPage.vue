@@ -17,7 +17,7 @@
       class="bg-transparent">
       <div class="row q-mb-sm q-px-md q-py-sm">
         <div class="col text-grey-7 text-h6">Balance: </div>
-        <div class="col text-grey-7 text-h6 text-right"> {{ currencify(0) }} </div>
+        <div class="col text-grey-7 text-h6 text-right"> {{ balance}} </div>
       </div>
       <div class="row q-pa-sm q-gutter-sm bg-primary">
         <div class="col">
@@ -47,11 +47,18 @@
 
 <script setup>
 //
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import useCurrency from '../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 
 const { currencify } = useCurrency();
+const  balance = computed(() => {
+  let balance = 0;
+  entries.value.forEach(entry => {
+    balance += entry.amount;
+  });
+  return balance;
+});
 
 
 const entries = ref([
