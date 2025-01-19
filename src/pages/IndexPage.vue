@@ -52,6 +52,7 @@ import useCurrency from '../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 
 const { currencify } = useCurrency();
+
 const  balance = computed(() => {
   let balance = 0;
   entries.value.forEach(entry => {
@@ -65,17 +66,17 @@ const entries = ref([
   {
     id: 'id1',
     name: 'Salary',
-    amount: 4.999,
+    amount: 4999,
   },
   {
     id: 'id2',
     name: 'Rent',
-    amount:-999,
+    amount: -999,
   },
   {
     id: 'id3',
     name: 'Phone',
-    amount: -19.99,
+    amount: -1999,
   },
   {
     id: 'id4',

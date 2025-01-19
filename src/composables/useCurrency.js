@@ -13,7 +13,7 @@ export default function useCurrency() {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
-  return `${postNegSymbol} ${amountPositive} ${currencySimbol}`
+  return `${postNegSymbol} ${amountFormatted} ${currencySimbol}`
 }
 
 return {
