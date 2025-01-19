@@ -13,7 +13,12 @@
         </q-item>
       </q-list>
     </div>
-    <q-footer>
+    <q-footer
+      class="bg-transparent">
+      <div class="row q-px-md q-py-sm">
+        <div class="col text-grey-7 text-h6">Balance: </div>
+        <div class="col text-grey-7 text-h6 text-right"> {{ currencify(0) }} </div>
+      </div>
       <div class="row q-pa-sm q-gutter-sm">
         <div class="col">
           <q-input 
