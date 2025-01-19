@@ -2,8 +2,9 @@ export default function useCurrency() {
 
     const currencify = (amount) => {
 
-  let postNegSymbol = '';
-  amount > 0 ? postNegSymbol = '+' : postNegSymbol = '-';
+    let posNegSymbol = ''
+  if (amount > 0) posNegSymbol = '+'
+  else if (amount < 0) posNegSymbol = '-'
 
   const currencySimbol = '€';
 
@@ -13,7 +14,7 @@ export default function useCurrency() {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
-  return `${postNegSymbol} ${amountFormatted} ${currencySimbol}`
+  return `${posNegSymbol} ${amountPositive} ${currencySimbol}`
 }
 
 return {
