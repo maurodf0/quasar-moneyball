@@ -17,7 +17,9 @@
       class="bg-transparent">
       <div class="row q-mb-sm q-px-md q-py-sm">
         <div class="col text-grey-7 text-h6">Balance: </div>
-        <div class="col text-grey-7 text-h6 text-right"> {{ balance}} </div>
+        <div
+          :class="useAmountColorClass(balance)" 
+          class="col text-h6 text-right"> {{ currencify(balance) }} </div> 
       </div>
       <div class="row q-pa-sm q-gutter-sm bg-primary">
         <div class="col">
