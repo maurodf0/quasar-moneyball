@@ -134,20 +134,26 @@ const addEntry = () => {
   nameRef.value.focus();
 };
 
-const onRight = () => {
+const onRight = ({ reset }) => {
   $q.dialog({
-        title: 'Confirm',
-        message: 'Would you like to turn on the wifi?',
+        title: 'Delete Entry',
+        message: 'Delete this entry?',
         cancel: true,
-        persistent: true
+        persistent: true,
+        ok: {
+          label: 'Delete',
+          color: 'negative',
+          noCaps: true
+        },
+        cancel: {
+          label: 'Cancel',
+          color: 'primary',
+          noCaps: true
+        }
       }).onOk(() => {
-        // console.log('>>>> OK')
-      }).onOk(() => {
-        // console.log('>>>> second OK catcher')
+        console.log('Deleted entry');
       }).onCancel(() => {
-        // console.log('>>>> Cancel')
-      }).onDismiss(() => {
-        // console.log('I am triggered on both OK and Cancel')
-      })
+        reset();
+      });
 }
 </script>
