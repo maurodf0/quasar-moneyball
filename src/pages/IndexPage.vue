@@ -76,6 +76,7 @@ import useCurrency from '../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 
 const { currencify } = useCurrency();
+const $q = useQuasar();
 
 const nameRef = ref(null);
 
