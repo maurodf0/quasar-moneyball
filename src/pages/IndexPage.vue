@@ -24,6 +24,7 @@
       <div class="row q-pa-sm q-gutter-sm bg-primary">
         <div class="col">
           <q-input 
+          v-model="addEntryForm.name"
           placeholder="Name" 
           bg-color="white" 
           outlined 
@@ -31,6 +32,7 @@
         </div>
         <div class="col">
           <q-input 
+          v-model="addEntryForm.amount"
           type="number"
           step="0.01"
           class="text-right"
@@ -49,7 +51,7 @@
 
 <script setup>
 //
-import { ref, computed } from 'vue'
+import { ref, computed, reactive } from 'vue'
 import useCurrency from '../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 
@@ -84,4 +86,11 @@ const entries = ref([
     amount: 0,
   },
 ]);
+
+const addEntryForm = reactive({
+  name: '',
+  amount: null,
+});
+
+
 </script>
