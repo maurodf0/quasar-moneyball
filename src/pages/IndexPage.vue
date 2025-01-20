@@ -71,7 +71,7 @@
 <script setup>
 //
 import { ref, computed, reactive } from 'vue'
-import { uid } from 'quasar'
+import { uid, useQuasar } from 'quasar'
 import useCurrency from '../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 
@@ -134,6 +134,19 @@ const addEntry = () => {
 };
 
 const onRight = () => {
-  console.log('onRight');
+  $q.dialog({
+        title: 'Confirm',
+        message: 'Would you like to turn on the wifi?',
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        // console.log('>>>> OK')
+      }).onOk(() => {
+        // console.log('>>>> second OK catcher')
+      }).onCancel(() => {
+        // console.log('>>>> Cancel')
+      }).onDismiss(() => {
+        // console.log('I am triggered on both OK and Cancel')
+      })
 }
 </script>
