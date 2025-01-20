@@ -26,6 +26,7 @@
         class="row q-pa-sm q-gutter-sm bg-primary">
         <div class="col">
           <q-input 
+          ref="nameRef"
           v-model="addEntryForm.name"
           placeholder="Name" 
           bg-color="white" 
@@ -59,6 +60,8 @@ import useCurrency from '../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 
 const { currencify } = useCurrency();
+
+const nameRef = ref(null);
 
 const  balance = computed(() => {
   return entries.value.reduce((acc, entry) => {
@@ -111,6 +114,7 @@ const addEntry = () => {
   entries.value.push(newEntry);
   addEntryForm.name = '';
   addEntryForm.amount = null;
+  nameRef.value.focus();
 };
 
 </script>
