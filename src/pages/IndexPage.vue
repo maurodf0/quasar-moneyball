@@ -54,6 +54,7 @@
 <script setup>
 //
 import { ref, computed, reactive } from 'vue'
+import { uid } from 'quasar'
 import useCurrency from '../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 
@@ -97,7 +98,7 @@ const addEntryForm = reactive({
 
 const addEntry = () => {
   const newEntry = {
-    id: Date.now(),
+    id: uid(),
     name: addEntryForm.name,
     amount: addEntryForm.amount,
   };
