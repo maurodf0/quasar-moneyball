@@ -2,7 +2,18 @@
   <q-page>
     <div class="q-pa-md">
       <q-list bordered separator>
-        <q-item v-for="entry in entries" :key="entry.id">
+
+     <q-slide-item
+     v-for="entry in entries" :key="entry.id"
+     @left="onLeft" @right="onRight">
+        <template v-slot:left>
+          <q-icon name="done" />
+        </template>
+        <template v-slot:right>
+          <q-icon name="alarm" />
+        </template>
+
+        <q-item >
           <q-item-section :class="useAmountColorClass(entry.amount)" class="text-weight-bold">
             {{ entry.name }}
           </q-item-section>
@@ -11,6 +22,7 @@
             {{ currencify(entry.amount) }}
           </q-item-section>
         </q-item>
+    </q-slide-item>
       </q-list>
     </div>
     <q-footer
