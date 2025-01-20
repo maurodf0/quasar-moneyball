@@ -103,7 +103,8 @@ const addEntry = () => {
   //   amount: Number(addEntryForm.amount),
   // };
 
-  const newEntry = Object.assign({}, addEntryForm, {id: uid()})
+  //const newEntry = Object.assign({}, addEntryForm, {id: uid()})
+  const newEntry = { ...addEntryForm, id: uid() };
   //A newEntru viene assegnato un oggetto 
   // creato prima (addEntryForm a cui viene aggunto l'id)
 
