@@ -34,7 +34,7 @@
         </div>
         <div class="col">
           <q-input 
-          v-model="addEntryForm.amount"
+          v-model.number="addEntryForm.amount"
           type="number"
           step="0.01"
           class="text-right"
@@ -100,7 +100,7 @@ const addEntry = () => {
   const newEntry = {
     id: uid(),
     name: addEntryForm.name,
-    amount: addEntryForm.amount,
+    amount: Number(addEntryForm.amount),
   };
 
   entries.value.push(newEntry);
