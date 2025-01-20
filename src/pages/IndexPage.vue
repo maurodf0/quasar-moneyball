@@ -21,7 +21,9 @@
           :class="useAmountColorClass(balance)" 
           class="col text-h6 text-right"> {{ currencify(balance) }} </div> 
       </div>
-      <div class="row q-pa-sm q-gutter-sm bg-primary">
+      <q-form 
+        @submit="addEntry"
+        class="row q-pa-sm q-gutter-sm bg-primary">
         <div class="col">
           <q-input 
           v-model="addEntryForm.name"
@@ -42,9 +44,9 @@
           dense />
         </div>
         <div class="col col-auto">
-          <q-btn round color="primary" icon="add"/>
+          <q-btn type="submit" round color="primary" icon="add"/>
         </div>
-      </div>
+      </q-form>
     </q-footer>
   </q-page>
 </template>
@@ -92,5 +94,17 @@ const addEntryForm = reactive({
   amount: null,
 });
 
+
+const addEntry = () => {
+  const newEntry = {
+    id: Date.now(),
+    name: addEntryForm.name,
+    amount: addEntryForm.amount,
+  };
+
+  entries.value.push(newEntry);
+  addEntryForm.name = '';
+  addEntryForm.amount = null;
+};
 
 </script>
