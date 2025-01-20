@@ -8,12 +8,13 @@
      right-color="negative"
      v-for="entry in entries" 
      :key="entry.id"
-     @left="onLeft" @right="onRight">
-        <template v-slot:left>
+     @left="onLeft" 
+     @right="onRight">
+        <!-- <template v-slot:left>
           <q-icon name="done" />
-        </template>
+        </template> -->
         <template v-slot:right>
-          <q-icon name="alarm" />
+          <q-icon name="delete" />
         </template>
 
         <q-item >
@@ -132,4 +133,7 @@ const addEntry = () => {
   nameRef.value.focus();
 };
 
+const onRight = () => {
+  console.log('onRight');
+}
 </script>
