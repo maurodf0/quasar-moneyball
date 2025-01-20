@@ -97,11 +97,15 @@ const addEntryForm = reactive({
 
 
 const addEntry = () => {
-  const newEntry = {
-    id: uid(),
-    name: addEntryForm.name,
-    amount: Number(addEntryForm.amount),
-  };
+  // const newEntry = {
+  //   id: uid(),
+  //   name: addEntryForm.name,
+  //   amount: Number(addEntryForm.amount),
+  // };
+
+  const newEntry = Object.assign({}, addEntryForm, {id: uid()})
+  //A newEntru viene assegnato un oggetto 
+  // creato prima (addEntryForm a cui viene aggunto l'id)
 
   entries.value.push(newEntry);
   addEntryForm.name = '';
