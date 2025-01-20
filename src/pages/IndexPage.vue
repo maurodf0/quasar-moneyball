@@ -4,7 +4,10 @@
       <q-list bordered separator>
 
      <q-slide-item
-     v-for="entry in entries" :key="entry.id"
+     left-color="positive"
+     right-color="negative"
+     v-for="entry in entries" 
+     :key="entry.id"
      @left="onLeft" @right="onRight">
         <template v-slot:left>
           <q-icon name="done" />
