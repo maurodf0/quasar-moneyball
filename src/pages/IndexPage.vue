@@ -9,7 +9,7 @@
      v-for="entry in entries" 
      :key="entry.id"
      @left="onLeft" 
-     @right="onRight($event, entry.id)">
+     @right="onRight($event, entry)">
         <!-- <template v-slot:left>
           <q-icon name="done" />
         </template> -->
@@ -134,12 +134,18 @@ const addEntry = () => {
   nameRef.value.focus();
 };
 
-const onRight = ({ reset }, entryID) => {
+const onRight = ({ reset }, entry) => {
   $q.dialog({
         title: 'Delete Entry',
-        message: 'Delete this entry?',
+        message: `Delete this entry?
+        <div class="q-mt-md text-weight-bold">
+          ${entry.name} : ${currencify(entry.amount)}
+          </div>
+        
+        `,
         cancel: true,
         persistent: true,
+        html: true,
         ok: {
           label: 'Delete',
           color: 'negative',
