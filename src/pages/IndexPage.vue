@@ -138,7 +138,7 @@ const onRight = ({ reset }, entry) => {
   $q.dialog({
         title: 'Delete Entry',
         message: `Delete this entry?
-        <div class="q-mt-md text-weight-bold">
+        <div class="q-mt-md text-weight-bold ${useAmountColorClass(entry.amount)}">
           ${entry.name} : ${currencify(entry.amount)}
           </div>
         
