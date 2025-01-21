@@ -157,7 +157,7 @@ const onRight = ({ reset }, entry) => {
           noCaps: true
         }
       }).onOk(() => {
-        deleteEntry(entryID);
+        deleteEntry(entry.id);
       }).onCancel(() => {
         reset();
       });
