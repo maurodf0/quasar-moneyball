@@ -166,6 +166,13 @@ const onRight = ({ reset }, entry) => {
 const deleteEntry = (entryID) => {
  const index = entries.value.findIndex((entry) => entry.id === entryID); 
  entries.value.splice(index, 1);
+
+  $q.notify({
+          message: 'Entry Deleted',
+          color: 'positive',
+          position: 'top-right',
+          icon: 'delete',
+        })
 }
 
 </script>
