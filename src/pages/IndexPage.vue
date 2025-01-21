@@ -9,7 +9,7 @@
      v-for="entry in entries" 
      :key="entry.id"
      @left="onLeft" 
-     @right="onRight">
+     @right="onRight($event, entry.id)">
         <!-- <template v-slot:left>
           <q-icon name="done" />
         </template> -->
@@ -134,7 +134,7 @@ const addEntry = () => {
   nameRef.value.focus();
 };
 
-const onRight = ({ reset }) => {
+const onRight = ({ reset }, entryID) => {
   $q.dialog({
         title: 'Delete Entry',
         message: 'Delete this entry?',
@@ -151,9 +151,15 @@ const onRight = ({ reset }) => {
           noCaps: true
         }
       }).onOk(() => {
-        console.log('Deleted entry');
+        deleteEntry(entryID);
       }).onCancel(() => {
         reset();
       });
 }
+
+const deleteEntry = (entryID) => {
+ const index = entries.value.findIndex((entry) => entry.id === entryID); 
+ entries.value.splice(index, 1);
+}
+
 </script>
