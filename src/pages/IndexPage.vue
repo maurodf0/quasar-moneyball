@@ -147,8 +147,8 @@ const onRight = ({ reset }, entry) => {
 }
 
 const deleteEntry = (entryID) => {
- const index = storeEntries.entries.value.findIndex((entry) => entry.id === entryID); 
- storeEntries.entries.value.splice(index, 1);
+ const index = storeEntries.entries.findIndex((entry) => entry.id === entryID); 
+ storeEntries.entries.splice(index, 1);
 
   $q.notify({
           message: 'Entry Deleted',
