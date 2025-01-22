@@ -72,10 +72,12 @@
 //
 import { ref, computed, reactive } from 'vue'
 import { uid, useQuasar } from 'quasar'
+import { useStoreEntries } from 'src/stores/storeEntries';
 import useCurrency from '../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 
 const { currencify } = useCurrency();
+const { entries } = useStoreEntries();
 const $q = useQuasar();
 
 const nameRef = ref(null);
@@ -87,28 +89,7 @@ const  balance = computed(() => {
 });
 
 
-const entries = ref([
-  {
-    id: 'id1',
-    name: 'Salary',
-    amount: 4999,
-  },
-  {
-    id: 'id2',
-    name: 'Rent',
-    amount: -999,
-  },
-  {
-    id: 'id3',
-    name: 'Phone',
-    amount: -19.99,
-  },
-  {
-    id: 'id4',
-    name: 'Unknown',
-    amount: 0,
-  },
-]);
+
 
 const addEntryForm = reactive({
   name: '',
