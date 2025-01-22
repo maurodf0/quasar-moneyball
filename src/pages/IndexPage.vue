@@ -6,7 +6,7 @@
      <q-slide-item
      left-color="positive"
      right-color="negative"
-     v-for="entry in entries" 
+     v-for="entry in storeEntries.entries" 
      :key="entry.id"
      @left="onLeft" 
      @right="onRight($event, entry)">
@@ -77,13 +77,15 @@ import useCurrency from '../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 
 const { currencify } = useCurrency();
-const { entries } = useStoreEntries();
+const  storeEntries = useStoreEntries();
 const $q = useQuasar();
 
 const nameRef = ref(null);
 
+console.log(storeEntries.entries);
+
 const  balance = computed(() => {
-  return entries.value.reduce((acc, entry) => {
+  return storeEntries.entries.reduce((acc, entry) => {
     return acc + entry.amount;
   }, 0);
 });
@@ -109,7 +111,7 @@ const addEntry = () => {
   //A newEntru viene assegnato un oggetto 
   // creato prima (addEntryForm a cui viene aggunto l'id)
 
-  entries.value.push(newEntry);
+  storeEntries.entries.value.push(newEntry);
   addEntryForm.name = '';
   addEntryForm.amount = null;
   nameRef.value.focus();
@@ -145,8 +147,8 @@ const onRight = ({ reset }, entry) => {
 }
 
 const deleteEntry = (entryID) => {
- const index = entries.value.findIndex((entry) => entry.id === entryID); 
- entries.value.splice(index, 1);
+ const index = storeEntries.entries.value.findIndex((entry) => entry.id === entryID); 
+ storeEntries.entries.value.splice(index, 1);
 
   $q.notify({
           message: 'Entry Deleted',
