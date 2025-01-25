@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
-import { uid } from 'quasar'
+import { uid, Notify } from 'quasar'
 
 export const useStoreEntries = defineStore("entries", () => {
 
@@ -53,10 +53,25 @@ const addEntry = (addEntryForm) => {
   nameRef.value.focus();
 };
 
+
+const deleteEntry = (entryID) => {
+ const index = entries.value.findIndex((entry) => entry.id === entryID); 
+ entries.value.splice(index, 1);
+
+  Notify.create({
+          message: 'Entry Deleted',
+          color: 'positive',
+          position: 'top-right',
+          icon: 'delete',
+        })
+}
+
+
   return {
     entries,
     balance,
     addEntry,
+    deleteEntry,
   };
 
 });

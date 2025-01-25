@@ -112,22 +112,11 @@ const onRight = ({ reset }, entry) => {
           noCaps: true
         }
       }).onOk(() => {
-        deleteEntry(entry.id);
+        storeEntries.deleteEntry(entry.id);
       }).onCancel(() => {
         reset();
       });
 }
 
-const deleteEntry = (entryID) => {
- const index = storeEntries.entries.findIndex((entry) => entry.id === entryID); 
- storeEntries.entries.splice(index, 1);
-
-  $q.notify({
-          message: 'Entry Deleted',
-          color: 'positive',
-          position: 'top-right',
-          icon: 'delete',
-        })
-}
 
 </script>
