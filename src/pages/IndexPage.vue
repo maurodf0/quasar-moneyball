@@ -84,15 +84,6 @@ const nameRef = ref(null);
 
 console.log(storeEntries.entries);
 
-const  balance = computed(() => {
-  return storeEntries.entries.reduce((acc, entry) => {
-    return acc + entry.amount;
-  }, 0);
-});
-
-
-
-
 const addEntryForm = reactive({
   name: '',
   amount: null,
