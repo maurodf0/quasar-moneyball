@@ -38,7 +38,7 @@
           class="col text-h6 text-right"> {{ currencify(storeEntries.balance) }} </div> 
       </div>
       <q-form 
-        @submit="addEntry"
+        @submit="storeEntries.addEntry(addEntryForm)"
         class="row q-pa-sm q-gutter-sm bg-primary">
         <div class="col">
           <q-input 
@@ -82,31 +82,12 @@ const $q = useQuasar();
 
 const nameRef = ref(null);
 
-console.log(storeEntries.entries);
-
 const addEntryForm = reactive({
   name: '',
   amount: null,
 });
 
 
-const addEntry = () => {
-  // const newEntry = {
-  //   id: uid(),
-  //   name: addEntryForm.name,
-  //   amount: Number(addEntryForm.amount),
-  // };
-
-  //const newEntry = Object.assign({}, addEntryForm, {id: uid()})
-  const newEntry = { ...addEntryForm, id: uid() };
-  //A newEntru viene assegnato un oggetto 
-  // creato prima (addEntryForm a cui viene aggunto l'id)
-
-  storeEntries.entries.value.push(newEntry);
-  addEntryForm.name = '';
-  addEntryForm.amount = null;
-  nameRef.value.focus();
-};
 
 const onRight = ({ reset }, entry) => {
   $q.dialog({

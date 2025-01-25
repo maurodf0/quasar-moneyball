@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
+import { uid } from 'quasar'
 
 export const useStoreEntries = defineStore("entries", () => {
 
@@ -34,9 +35,28 @@ const  balance = computed(() => {
   }, 0);
 });
 
+
+const addEntry = (addEntryForm) => {
+  // const newEntry = {
+  //   id: uid(),
+  //   name: addEntryForm.name,
+  //   amount: Number(addEntryForm.amount),
+  // };
+
+  //const newEntry = Object.assign({}, addEntryForm, {id: uid()})
+  const newEntry = { ...addEntryForm, id: uid() };
+  //A newEntru viene assegnato un oggetto 
+  // creato prima (addEntryForm a cui viene aggunto l'id)
+  entries.value.push();
+  addEntryForm.name = '';
+  addEntryForm.amount = null;
+  nameRef.value.focus();
+};
+
   return {
     entries,
     balance,
+    addEntry,
   };
 
 });
