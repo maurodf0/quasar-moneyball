@@ -4,6 +4,9 @@ import { uid, Notify } from 'quasar'
 
 export const useStoreEntries = defineStore("entries", () => {
 
+
+const nameRef = ref(null);
+
  const entries = ref([
   {
     id: 'id1',
@@ -47,10 +50,10 @@ const addEntry = (addEntryForm) => {
   const newEntry = { ...addEntryForm, id: uid() };
   //A newEntru viene assegnato un oggetto 
   // creato prima (addEntryForm a cui viene aggunto l'id)
-  entries.value.push();
+  entries.value.push(newEntry);
   addEntryForm.name = '';
   addEntryForm.amount = null;
-  nameRef.value.focus();
+  //nameRef.value.focus();
 };
 
 
@@ -72,6 +75,7 @@ const deleteEntry = (entryID) => {
     balance,
     addEntry,
     deleteEntry,
+    nameRef,
   };
 
 });

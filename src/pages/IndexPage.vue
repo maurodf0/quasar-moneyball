@@ -37,7 +37,7 @@
         class="row q-pa-sm q-gutter-sm bg-primary">
         <div class="col">
           <q-input 
-          ref="nameRef"
+          ref="storeEntries.nameRef"
           v-model="addEntryForm.name"
           placeholder="Name" 
           bg-color="white" 
@@ -75,8 +75,6 @@ import Balance from 'src/components/Entries/Balance.vue';
 const { currencify } = useCurrency();
 const  storeEntries = useStoreEntries();
 const $q = useQuasar();
-
-const nameRef = ref(null);
 
 const addEntryForm = reactive({
   name: '',
