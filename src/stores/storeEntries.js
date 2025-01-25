@@ -29,7 +29,7 @@ export const useStoreEntries = defineStore("entries", () => {
 
 
 const  balance = computed(() => {
-  return storeEntries.entries.reduce((acc, entry) => {
+  return entries.value.reduce((acc, entry) => {
     return acc + entry.amount;
   }, 0);
 });

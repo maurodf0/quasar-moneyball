@@ -34,8 +34,8 @@
       <div class="row q-mb-sm q-px-md q-py-sm">
         <div class="col text-grey-7 text-h6">Balance: </div>
         <div
-          :class="useAmountColorClass(balance)" 
-          class="col text-h6 text-right"> {{ currencify(balance) }} </div> 
+          :class="useAmountColorClass(storeEntries.balance)" 
+          class="col text-h6 text-right"> {{ currencify(storeEntries.balance) }} </div> 
       </div>
       <q-form 
         @submit="addEntry"
