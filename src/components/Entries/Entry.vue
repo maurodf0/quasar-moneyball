@@ -1,5 +1,5 @@
 <template>
-    <q-slide-item left-color="positive" right-color="negative" v-for="entry in storeEntries.entries" :key="entry.id"
+    <q-slide-item left-color="positive" right-color="negative"
         @left="onLeft" @right="onRight($event, entry)">
         <!-- <template v-slot:left>
           <q-icon name="done" />
@@ -21,6 +21,16 @@
 </template>
 
 <script setup>
+
+import { useQuasar } from 'quasar'
+import { useStoreEntries } from 'src/stores/storeEntries';
+import useCurrency from '../composables/useCurrency';
+import useAmountColorClass from 'src/composables/useAmountColorClass';
+
+const { currencify } = useCurrency();
+const storeEntries = useStoreEntries();
+const $q = useQuasar();
+
 
 const onRight = ({ reset }, entry) => {
     $q.dialog({
