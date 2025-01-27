@@ -24,12 +24,19 @@
 
 import { useQuasar } from 'quasar'
 import { useStoreEntries } from 'src/stores/storeEntries';
-import useCurrency from '../composables/useCurrency';
+import useCurrency from '../../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 
 const { currencify } = useCurrency();
 const storeEntries = useStoreEntries();
 const $q = useQuasar();
+
+const props = defineProps({
+    entry: {
+        type: Object,
+        required: true
+    }
+});
 
 
 const onRight = ({ reset }, entry) => {

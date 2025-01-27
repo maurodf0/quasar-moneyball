@@ -2,7 +2,10 @@
   <q-page>
     <div class="q-pa-md">
       <q-list bordered separator>
-        <Entry v-for="entry in storeEntries.entries" :key="entry.id" />
+        <Entry 
+        v-for="entry in storeEntries.entries" :key="entry.id"
+        :entry="entry"
+        />
       </q-list>
     </div>
     <AddEntry />
@@ -18,6 +21,7 @@ import useCurrency from '../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 import Balance from 'src/components/Entries/Balance.vue';
 import AddEntry from 'src/components/Entries/AddEntry.vue';
+import Entry from 'src/components/Entries/Entry.vue';
 
 const { currencify } = useCurrency();
 const  storeEntries = useStoreEntries();
