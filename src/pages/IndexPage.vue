@@ -1,13 +1,24 @@
 <template>
   <q-page>
-    <div class="q-pa-md">
+    <div v-if="storeEntries.entries.length > 0 "  class="q-pa-md">
       <q-list bordered separator>
-        <Entry 
-        v-for="entry in storeEntries.entries" :key="entry.id"
-        :entry="entry"
-        />
+        <Entry v-for="entry in storeEntries.entries" :key="entry.id" :entry="entry" />
       </q-list>
     </div>
+
+    <div v-else class="q-pa-md">
+      <q-card class="q-pa-md">
+        <q-card-section>
+          <div class="text-h6">
+            No entries yet
+          </div>
+          <div class="text-subtitle2">
+            Add one by clicking on the button below
+          </div>
+        </q-card-section>
+      </q-card>
+    </div>
+
     <AddEntry />
   </q-page>
 </template>
