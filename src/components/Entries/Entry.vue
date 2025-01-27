@@ -11,10 +11,7 @@
             <q-item-section :class="useAmountColorClass(entry.amount)" class="text-weight-bold">
                 {{ entry.name }}
 
-                <q-popup-edit 
-                :model-value="entry.name" 
-                auto-save 
-                v-slot="scope">
+                <q-popup-edit :model-value="entry.name" auto-save v-slot="scope">
                     <q-input v-model="scope.value" dense autofocus counter @keyup.enter="scope.set" />
                 </q-popup-edit>
 
@@ -25,16 +22,8 @@
             <q-item-section side class="text-weight-bold" :class="useAmountColorClass(entry.amount)">
                 {{ currencify(entry.amount) }}
 
-                <q-popup-edit
-                v-model="entry.amount" 
-                auto-save 
-                v-slot="scope">
-                    <q-input 
-                    v-model="scope.value" 
-                    dense 
-                    autofocus 
-                    counter 
-                    @keyup.enter="scope.set" />
+                <q-popup-edit :model-value="entry.amount" auto-save v-slot="scope">
+                    <q-input v-model="scope.value" dense autofocus counter @keyup.enter="scope.set" />
                 </q-popup-edit>
             </q-item-section>
         </q-item>
