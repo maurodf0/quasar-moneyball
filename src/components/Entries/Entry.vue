@@ -11,7 +11,12 @@
             <q-item-section :class="useAmountColorClass(entry.amount)" class="text-weight-bold">
                 {{ entry.name }}
 
-                <q-popup-edit :model-value="entry.name" auto-save v-slot="scope">
+                <q-popup-edit 
+                :model-value="entry.name" 
+                auto-save 
+                v-slot="scope"
+                anchor="bottom left"
+                :cover="false">
                     <q-input v-model="scope.value" dense autofocus counter @keyup.enter="scope.set" />
                 </q-popup-edit>
 
