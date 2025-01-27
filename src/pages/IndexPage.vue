@@ -7,16 +7,7 @@
     </div>
 
     <div v-else class="q-pa-md">
-      <q-card class="q-pa-md">
-        <q-card-section>
-          <div class="text-h6">
-            No entries yet
-          </div>
-          <div class="text-subtitle2">
-            Add one by clicking on the button below
-          </div>
-        </q-card-section>
-      </q-card>
+      <NothingHere />
     </div>
 
     <AddEntry />
@@ -30,6 +21,7 @@ import { useStoreEntries } from 'src/stores/storeEntries';
 import Balance from 'src/components/Entries/Balance.vue';
 import AddEntry from 'src/components/Entries/AddEntry.vue';
 import Entry from 'src/components/Entries/Entry.vue';
+import NothingHere from 'src/components/Entries/NothingHere.vue';
 
 const  storeEntries = useStoreEntries();
 
