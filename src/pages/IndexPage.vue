@@ -47,10 +47,7 @@ const { currencify } = useCurrency();
 const  storeEntries = useStoreEntries();
 const $q = useQuasar();
 
-const addEntryForm = reactive({
-  name: '',
-  amount: null,
-});
+
 
 
 

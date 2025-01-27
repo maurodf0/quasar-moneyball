@@ -19,4 +19,13 @@
 
 <script setup>
 
+import { reactive } from 'vue';
+import { useStoreEntries } from 'src/stores/storeEntries';
+
+const storeEntries = useStoreEntries();
+
+const addEntryForm = reactive({
+    name: '',
+    amount: null,
+});
 </script>
