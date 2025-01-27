@@ -21,7 +21,7 @@
 
 import { reactive } from 'vue';
 import { useStoreEntries } from 'src/stores/storeEntries';
-
+import Balance from 'src/components/Entries/Balance.vue';
 const storeEntries = useStoreEntries();
 
 const addEntryForm = reactive({
