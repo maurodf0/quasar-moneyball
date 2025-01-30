@@ -42,6 +42,12 @@ const  balance = computed(() => {
   }, 0);
 });
 
+const balancePaid = computed(() => {
+  return entries.value.reduce((acc, { amount, paid }) => {
+    return paid ?  acc + amount : acc;
+  }, 0);
+});
+
 
 const addEntry = (addEntryForm) => {
   // const newEntry = {
