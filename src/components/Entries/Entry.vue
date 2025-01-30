@@ -1,8 +1,12 @@
 <template>
-    <q-slide-item left-color="positive" right-color="negative" @left="onLeft" @right="onRight($event, entry)">
-        <!-- <template v-slot:left>
+    <q-slide-item 
+        left-color="positive" 
+        right-color="negative" 
+        @left="onLeft" 
+        @right="onRight($event, entry)">
+        <template v-slot:left>
           <q-icon name="done" />
-        </template> -->
+        </template>
         <template v-slot:right>
             <q-icon name="delete" />
         </template>
@@ -73,6 +77,7 @@ const props = defineProps({
 
 
 const onRight = ({ reset }, entry) => {
+
     $q.dialog({
         title: 'Delete Entry',
         message: `Delete this entry?
@@ -100,6 +105,11 @@ const onRight = ({ reset }, entry) => {
         reset();
     });
 }
+
+
+    const onLeft = ({ reset }, entry) => {
+        console.log(props.entry.id);
+    }
 
 const onNameUpdate = (value) => {
     storeEntries.updateEntry(props.entry.id, { name: value });

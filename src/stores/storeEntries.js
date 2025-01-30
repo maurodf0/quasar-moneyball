@@ -12,21 +12,25 @@ const nameRef = ref(null);
     id: 'id1',
     name: 'Salary',
     amount: 4999,
+    paid: false
   },
   {
     id: 'id2',
     name: 'Rent',
     amount: -999,
+    paid: false
   },
   {
     id: 'id3',
     name: 'Phone',
     amount: -19.99,
+    paid: false
   },
   {
     id: 'id4',
     name: 'Unknown',
     amount: 0,
+    paid: false
   },
 ]);
 
