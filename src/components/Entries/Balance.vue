@@ -15,7 +15,7 @@
                 Paid: 
                 <span 
                   class="text-weight-bold"
-                   :class="useAmountColorClass(478322)"> {{currencify(478322)}} </span>   
+                   :class="useAmountColorClass(storeEntries.balancePaid)"> {{currencify(storeEntries.balancePaid)}} </span>    
               </div>
             </div>
         </div> 

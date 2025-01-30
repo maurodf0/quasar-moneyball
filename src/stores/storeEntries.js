@@ -95,7 +95,8 @@ const getEntryIndexByID = (entryID) => {
     addEntry,
     deleteEntry,
     nameRef,
-    updateEntry
+    updateEntry,
+    balancePaid
   };
 
 });
