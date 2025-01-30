@@ -12,6 +12,7 @@
                 {{ entry.name }}
 
                 <q-popup-edit 
+                @save="onNameUpdate"
                 :model-value="entry.name" 
                 auto-save 
                 v-slot="scope"
@@ -97,6 +98,10 @@ const onRight = ({ reset }, entry) => {
     }).onCancel(() => {
         reset();
     });
+}
+
+const onNameUpdate = (value) => {
+    storeEntries.updateEntry(props.entry.id, { name: value });
 }
 
 </script>

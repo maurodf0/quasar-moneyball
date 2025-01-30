@@ -70,12 +70,18 @@ const deleteEntry = (entryID) => {
 }
 
 
+const updateEntry = (entryID, updates) => {
+   const index = entries.value.findIndex((entry) => entry.id === entryID); 
+  Object.assign(entries.value[index], updates);
+}
+
   return {
     entries,
     balance,
     addEntry,
     deleteEntry,
     nameRef,
+    updateEntry
   };
 
 });
