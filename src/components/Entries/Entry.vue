@@ -1,5 +1,6 @@
 <template>
     <q-slide-item 
+        :class="{ 'bg-grey-2': props.entry.paid }"
         left-color="positive" 
         right-color="negative" 
         @left="onLeft" 
@@ -12,7 +13,9 @@
         </template>
 
         <q-item>
-            <q-item-section :class="useAmountColorClass(entry.amount)" class="text-weight-bold">
+            <q-item-section 
+                :class="[useAmountColorClass(entry.amount), entry.paid ? 'text-strike' : '']"
+                class="text-weight-bold">
                 {{ entry.name }}
 
                 <q-popup-edit 
