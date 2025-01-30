@@ -1,5 +1,8 @@
 <template>
-        <div class="row q-mb-sm q-px-md q-py-sm">
+        <div 
+        class="row q-mb-sm q-px-md q-py-sm"
+        :class="storeEntries.balancePaid > 0 ? 'items-center' : ''"   
+        >
         <div class="col text-grey-7 text-h6">Balance: </div>
         <div
           :class="useAmountColorClass(storeEntries.balance)" 
