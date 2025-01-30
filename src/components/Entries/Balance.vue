@@ -10,7 +10,9 @@
             </div>
             </div>
 
-            <div class="row">
+            <div 
+            class="row"
+            v-if="storeEntries.balancePaid > 0">
               <div class="col text-caption text-grey-6">
                 Paid: 
                 <span 
