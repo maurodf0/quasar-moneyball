@@ -27,5 +27,6 @@ const storeEntries = useStoreEntries();
 const addEntryForm = reactive({
     name: '',
     amount: null,
+    paid: false
 });
 </script>
