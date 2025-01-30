@@ -63,6 +63,7 @@ import { useQuasar } from 'quasar'
 import { useStoreEntries } from 'src/stores/storeEntries';
 import useCurrency from '../../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
+import { store } from 'quasar/wrappers';
 
 const { currencify } = useCurrency();
 const storeEntries = useStoreEntries();
@@ -109,6 +110,7 @@ const onRight = ({ reset }, entry) => {
 
     const onLeft = ({ reset }, entry) => {
         console.log(props.entry.id);
+        storeEntries.updateEntry(props.entry.id, { paid: !props.entry.paid });
     }
 
 const onNameUpdate = (value) => {
