@@ -31,6 +31,7 @@
                 {{ currencify(entry.amount) }}
 
                 <q-popup-edit 
+                @save="onAmountUpdate"
                 :model-value="entry.amount" 
                 auto-save 
                 v-slot="scope"
@@ -102,6 +103,10 @@ const onRight = ({ reset }, entry) => {
 
 const onNameUpdate = (value) => {
     storeEntries.updateEntry(props.entry.id, { name: value });
+}
+
+const onAmountUpdate = (value) => {
+    storeEntries.updateEntry(props.entry.id, { amount: value });
 }
 
 </script>
