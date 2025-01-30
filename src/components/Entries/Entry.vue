@@ -108,9 +108,9 @@ const onRight = ({ reset }, entry) => {
 }
 
 
-    const onLeft = ({ reset }, entry) => {
-        console.log(props.entry.id);
+    const onLeft = ({ reset }) => {
         storeEntries.updateEntry(props.entry.id, { paid: !props.entry.paid });
+        reset();
     }
 
 const onNameUpdate = (value) => {
