@@ -16,6 +16,8 @@
                 auto-save 
                 v-slot="scope"
                 anchor="bottom left"
+                buttons
+                label-set="Ok"
                 :cover="false">
                     <q-input v-model="scope.value" dense autofocus counter @keyup.enter="scope.set" />
                 </q-popup-edit>
