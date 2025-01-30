@@ -3,7 +3,21 @@
         <div class="col text-grey-7 text-h6">Balance: </div>
         <div
           :class="useAmountColorClass(storeEntries.balance)" 
-          class="col text-h6 text-right"> {{ currencify(storeEntries.balance) }} 
+          class="col text-h6 text-right"> 
+          <div class="row">
+            <div class="col">
+          {{ currencify(storeEntries.balance) }} 
+            </div>
+            </div>
+
+            <div class="row">
+              <div class="col text-caption text-grey-6">
+                Paid: 
+                <span 
+                  class="text-weight-bold"
+                   :class="useAmountColorClass(478322)"> {{currencify(478322)}} </span>   
+              </div>
+            </div>
         </div> 
       </div>
     
