@@ -58,7 +58,7 @@ const addEntry = (addEntryForm) => {
 
 
 const deleteEntry = (entryID) => {
- const index = entries.value.findIndex((entry) => entry.id === entryID); 
+  const index = getEntryIndexByID(entryID);
  entries.value.splice(index, 1);
 
   Notify.create({
@@ -71,8 +71,12 @@ const deleteEntry = (entryID) => {
 
 
 const updateEntry = (entryID, updates) => {
-   const index = entries.value.findIndex((entry) => entry.id === entryID); 
+  const index = getEntryIndexByID(entryID);
   Object.assign(entries.value[index], updates);
+}
+
+const getEntryIndexByID = (entryID) => {
+    return entries.value.findIndex((entry) => entry.id === entryID);
 }
 
   return {
