@@ -61,7 +61,7 @@
 
 
        
-            <q-item-section side>
+            <q-item-section v-if="storeEntries.options.sort" side>
                 <q-icon 
                     name="reorder"
                     color="primary" />
