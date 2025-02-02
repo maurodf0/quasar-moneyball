@@ -63,6 +63,7 @@
        
             <q-item-section v-if="storeEntries.options.sort" side>
                 <q-icon 
+                    class="handle"
                     name="reorder"
                     color="primary" />
             </q-item-section>

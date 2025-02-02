@@ -6,7 +6,7 @@
       :list="storeEntries.entries"
       item-key="id"
       tag="div"
-      :options="options"
+      :options="{ handle: '.handle' }"
     >
       <template #item="{element, index}">
         <Entry :key="element.id" :entry="element" />
