@@ -12,6 +12,7 @@
         </q-toolbar-title>
 
         <q-btn 
+        v-if="$route.path === '/'"
           :label="!storeEntries.options.sort ? 'Sort' : 'Done'"
           flat
           no-caps
