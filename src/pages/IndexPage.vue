@@ -3,6 +3,7 @@
     <div v-if="storeEntries.entries.length > 0 "  class="q-pa-md">
       <q-list bordered separator>
        <Sortable
+       @end="storeEntries.sortEnd"
       :list="storeEntries.entries"
       item-key="id"
       tag="div"
