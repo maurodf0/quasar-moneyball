@@ -1,4 +1,5 @@
 <template>
+
     <q-slide-item 
         :class="{ 'bg-grey-2': props.entry.paid }"
         left-color="positive" 
@@ -55,6 +56,15 @@
                         counter
                         @keyup.enter="scope.set" />
                 </q-popup-edit>
+            </q-item-section>
+        
+
+
+       
+            <q-item-section side>
+                <q-icon 
+                    name="reorder"
+                    color="primary" />
             </q-item-section>
         </q-item>
     </q-slide-item>
