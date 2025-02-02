@@ -87,8 +87,13 @@ const updateEntry = (entryID, updates) => {
   Object.assign(entries.value[index], updates);
 }
 
-const sortEnd = () => {
-  console.log('sortEnd');
+const sortEnd = ({oldIndex, newIndex}) => {
+  const movedEntry = entries.value[oldIndex];
+
+  console.log(oldIndex, newIndex);
+  console.log(movedEntry);
+  entries.value.splice(oldIndex, 1);
+  entries.value.splice(newIndex, 0, movedEntry);
 }
 
 /* HELPERS */
