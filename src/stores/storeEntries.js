@@ -87,6 +87,12 @@ const updateEntry = (entryID, updates) => {
   Object.assign(entries.value[index], updates);
 }
 
+const sortEnd = () => {
+  console.log('sortEnd');
+}
+
+/* HELPERS */
+
 const getEntryIndexByID = (entryID) => {
     return entries.value.findIndex((entry) => entry.id === entryID);
 }
@@ -100,6 +106,7 @@ const getEntryIndexByID = (entryID) => {
     updateEntry,
     balancePaid,
     options,
+    sortEnd,
   };
 
 });
