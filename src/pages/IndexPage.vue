@@ -1,7 +1,8 @@
 <template>
   <q-page>
     <div v-if="storeEntries.entries.length > 0 "  class="q-pa-md">
-      <q-list bordered separator>
+      <q-list 
+        class="entries">
        <Sortable
        @end="storeEntries.sortEnd"
       :list="storeEntries.entries"

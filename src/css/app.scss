@@ -18,3 +18,15 @@ input::-webkit-inner-spin-button {
 .q-popup-edit__buttons .q-btn{
   text-transform: capitalize;
 }
+
+.entries .q-slide-item {
+  border: 1px solid #e0e0e0;
+
+  &:not(:first-child) {
+    margin-top: -1px;
+  }
+}
+
+.sortable-ghost {
+  opacity: 0;
+}
