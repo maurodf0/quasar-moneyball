@@ -11,6 +11,17 @@
           </div>
         </q-toolbar-title>
 
+        <q-btn 
+          :label="!storeEntries.options.sort ? 'Sort' : 'Done'"
+          flat
+          no-caps
+          dense
+          @click="storeEntries.options.sort = !storeEntries.options.sort"
+          
+          >          
+
+        </q-btn>
+
         
       </q-toolbar>
     </q-header>
@@ -42,6 +53,9 @@
 <script setup>
 import { ref } from 'vue'
 import NavLinks from 'src/components/Nav/NavLinks.vue'
+import { useStoreEntries } from 'src/stores/storeEntries';
+
+const storeEntries = useStoreEntries();
 
 const Links = [
   {
