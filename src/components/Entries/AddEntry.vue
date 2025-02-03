@@ -1,6 +1,11 @@
 <template>
     <q-footer class="bg-transparent">
+              <transition appear 
+        enter-active-class="animated slideInUp"
+        leave-active-class="animated slideOutDown"
+      >
         <Balance  v-if="storeEntries.entries.length > 0" />
+            </transition>
         <q-form @submit="storeEntries.addEntry(addEntryForm)" class="row q-pa-sm q-gutter-sm bg-primary">
             <div class="col">
                 <q-input  v-select-all
