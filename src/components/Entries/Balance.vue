@@ -1,5 +1,6 @@
 <template>
         <div 
+       
         class="row q-mb-sm q-px-md q-py-sm"
         :class="storeEntries.balancePaid > 0 ? 'items-center' : ''"   
         >
