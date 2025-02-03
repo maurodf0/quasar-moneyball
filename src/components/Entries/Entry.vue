@@ -21,7 +21,6 @@
 
                 <q-popup-edit 
                 @save="onNameUpdate"
-                v-select-all
                 :model-value="entry.name" 
                 auto-save 
                 v-slot="scope"
@@ -29,7 +28,13 @@
                 buttons
                 label-set="Ok"
                 :cover="false">
-                    <q-input v-model="scope.value" dense autofocus counter @keyup.enter="scope.set" />
+                    <q-input 
+                        v-model="scope.value" 
+                          v-select-all
+                          dense 
+                          autofocus 
+                          counter 
+                          @keyup.enter="scope.set" />
                 </q-popup-edit>
 
             </q-item-section>
