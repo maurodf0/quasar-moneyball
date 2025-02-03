@@ -20,7 +20,11 @@
     </div>
 
     <div v-else class="q-pa-md">
-      <NothingHere />
+      <transition appear 
+        enter-active-class="animated jackInTheBox slower"
+      >
+        <NothingHere />
+      </transition>
     </div>
 
     <AddEntry />
