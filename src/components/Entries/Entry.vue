@@ -21,6 +21,7 @@
 
                 <q-popup-edit 
                 @save="onNameUpdate"
+                v-select-all
                 :model-value="entry.name" 
                 auto-save 
                 v-slot="scope"
@@ -78,6 +79,7 @@ import { useStoreEntries } from 'src/stores/storeEntries';
 import useCurrency from '../../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 import { store } from 'quasar/wrappers';
+import vSelectAll from 'src/directives/directiveSelectAll';
 
 const { currencify } = useCurrency();
 const storeEntries = useStoreEntries();
