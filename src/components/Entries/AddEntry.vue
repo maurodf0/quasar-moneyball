@@ -1,6 +1,6 @@
 <template>
     <q-footer class="bg-transparent">
-        <Balance />
+        <Balance  v-if="storeEntries.entries.length > 0" />
         <q-form @submit="storeEntries.addEntry(addEntryForm)" class="row q-pa-sm q-gutter-sm bg-primary">
             <div class="col">
                 <q-input  v-select-all
