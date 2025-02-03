@@ -56,6 +56,7 @@
                     <q-input 
                         v-model="scope.value" 
                         dense
+                        v-select-all
                         type="number"
                         step="0.01"
                         autofocus 
