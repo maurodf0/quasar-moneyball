@@ -34,6 +34,20 @@ const nameRef = ref(null);
   },
 ]);
 
+const runningBalances = computed(() => {
+  let runningBalances = [];
+  let currentBalance = 0;
+
+  if(entries.value.length > 0) {
+    entries.value.forEach((entry) => {
+     let entryAmount = entry.amount ? entry.amount : 0;
+      currentBalance = currentBalance + entryAmount;
+      runningBalances.value.push(currentBalance);
+    });
+  }
+  return runningBalances;
+});
+
 const options = reactive({
   sort: true,
 });
@@ -104,6 +118,7 @@ const getEntryIndexByID = (entryID) => {
     balance,
     addEntry,
     deleteEntry,
+    runningBalances,
     nameRef,
     updateEntry,
     balancePaid,
