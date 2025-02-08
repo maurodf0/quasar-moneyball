@@ -11,7 +11,10 @@
       :options="{ handle: '.handle' }"
     >
       <template #item="{element, index}">
-        <Entry :key="element.id" :entry="element" />
+        <Entry 
+          :key="element.id" 
+          :entry="element"
+          :index="index" />
       </template>
 
     </Sortable>
