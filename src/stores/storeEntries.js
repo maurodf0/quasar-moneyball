@@ -11,7 +11,7 @@ const nameRef = ref(null);
   {
     id: 'id1',
     name: 'Salary',
-    amount: 4999,
+    amount: 4999.99,
     paid: false
   },
   {
