@@ -15,10 +15,11 @@
 
         <q-item>
             <q-item-section 
-                :class="[useAmountColorClass(entry.amount), entry.paid ? 'text-strike' : '']"
                 class="text-weight-bold">
+                <span  
+                :class="[useAmountColorClass(entry.amount), entry.paid ? 'text-strike' : '']">
                 {{ entry.name }}
-
+                </span>
                 <q-popup-edit 
                 @save="onNameUpdate"
                 :model-value="entry.name" 
@@ -41,8 +42,10 @@
 
 
 
-            <q-item-section side class="text-weight-bold" :class="useAmountColorClass(entry.amount)">
-                {{ currencify(entry.amount) }}
+            <q-item-section side class="text-weight-bold" 
+            :class="useAmountColorClass(entry.amount)">
+            <span>{{ currencify(entry.amount) }}</span>
+                
 
                 <q-popup-edit 
                 @save="onAmountUpdate"
