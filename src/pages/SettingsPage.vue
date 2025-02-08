@@ -9,7 +9,8 @@
           <q-item-label>Prompt to Delete</q-item-label>
         </q-item-section>
         <q-item-section side >
-          <q-toggle  />
+          <q-toggle
+          v-model="storeSettings.settings.promptToDelete"  />
         </q-item-section>
       </q-item>
 
@@ -20,5 +21,7 @@
 </template>
 
 <script setup>
+import { useStoreEntries } from 'src/stores/storeEntries';
 
+const storeSettings = useStoreSettings(); 
 </script>
