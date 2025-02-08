@@ -91,6 +91,9 @@ const { currencify } = useCurrency();
 const storeEntries = useStoreEntries();
 const $q = useQuasar();
 
+import { useStoreSettings } from 'src/stores/storeSettings';
+const { settings } = useStoreSettings();
+
 const props = defineProps({
     entry: {
         type: Object,
@@ -100,7 +103,7 @@ const props = defineProps({
 
 
 const onRight = ({ reset }, entry) => {
-
+    if(settings.promptToDelete) {
     $q.dialog({
         title: 'Delete Entry',
         message: `Delete this entry?
@@ -127,6 +130,10 @@ const onRight = ({ reset }, entry) => {
     }).onCancel(() => {
         reset();
     });
+} else {
+    storeEntries.deleteEntry(entry.id);
+}
+
 }
 
 
