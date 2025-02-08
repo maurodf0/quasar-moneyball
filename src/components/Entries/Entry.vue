@@ -63,6 +63,15 @@
                         counter
                         @keyup.enter="scope.set" />
                 </q-popup-edit>
+                <q-chip 
+                    v-if="settings.showRunningBalance"
+                    :class="useAmountColorClass(12.99)"
+                    size="10px"
+                    outline 
+                    dense
+                    >
+                   {{ currencify(12.99) }}
+                </q-chip>
             </q-item-section>
         
 
