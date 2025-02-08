@@ -68,12 +68,12 @@
                 </q-popup-edit>
                 <q-chip 
                     v-if="settings.showRunningBalance"
-                    :class="useAmountColorClass(12.99)"
+                    :class="useAmountColorClass(storeEntries.runningBalances[index])"
                     size="10px"
                     outline 
                     dense
                     >
-                   {{ currencify(12.99) }}
+                   {{ currencify(storeEntries.runningBalances[index]) }}
                 </q-chip>
             </q-item-section>
         
