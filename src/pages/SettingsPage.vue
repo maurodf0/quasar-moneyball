@@ -6,10 +6,10 @@
 
       <q-item tag="label" v-ripple>
         <q-item-section>
-          <q-item-label>Battery too low</q-item-label>
+          <q-item-label>Prompt to Delete</q-item-label>
         </q-item-section>
         <q-item-section side >
-          <q-toggle color="blue" v-model="notif1" val="battery" />
+          <q-toggle  />
         </q-item-section>
       </q-item>
 
