@@ -24,10 +24,11 @@
 
       <q-item tag="label" v-ripple>
         <q-item-section>
-          <q-item-label>Change Currency Symbol</q-item-label>
-        </q-item-section>
-        <q-item-section side >
-          <q-toggle color="blue" v-model="settings.showRunningBalance" val="battery" />
+        <q-input 
+            v-model="settings.currencySymbol"
+            label="Currency Symbol"
+            outlined="true"
+            />
         </q-item-section>
       </q-item>
 
