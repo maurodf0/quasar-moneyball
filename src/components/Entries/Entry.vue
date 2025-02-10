@@ -1,9 +1,7 @@
 <template>
 
     <q-slide-item 
-        :class="[
-            { 'bg-grey-2': props.entry.paid && !$q.dark.isActive },
-            { 'bg-grey-9': props.entry.paid && $q.dark.isActive }] "
+        
         left-color="positive" 
         right-color="negative" 
         @left="onLeft" 
