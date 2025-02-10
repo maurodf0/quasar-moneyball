@@ -1,5 +1,6 @@
-import { reactive } from 'vue';
+import { reactive, watch } from 'vue';
 import { defineStore } from 'pinia';
+
 
 export const useStoreSettings = defineStore("settings", () => {
 
@@ -10,7 +11,9 @@ const settings = reactive({
     darkMode: false,
 });
 
-/* HELPERS */
+watch(() => settings.darkMode, (value) => {
+  console.log(value)
+})
 
 
 
