@@ -9,7 +9,7 @@ export default function useCurrency() {
   if (amount > 0) posNegSymbol = '+'
   else if (amount < 0) posNegSymbol = '-'
 
-  const currencySimbol = '€';
+  const currencySimbol = settings.currencySymbol
 
   const amountPositive = Math.abs(amount);
 
