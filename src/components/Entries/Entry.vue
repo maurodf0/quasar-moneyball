@@ -1,7 +1,9 @@
 <template>
 
     <q-slide-item 
-        :class="{ 'bg-grey-2': props.entry.paid }"
+        :class="[
+            { 'bg-grey-2': props.entry.paid && !$q.dark.isActive },
+            { 'bg-grey-9': props.entry.paid && $q.dark.isActive }] "
         left-color="positive" 
         right-color="negative" 
         @left="onLeft" 
@@ -98,6 +100,7 @@ import useCurrency from '../../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
 import { store } from 'quasar/wrappers';
 import vSelectAll from 'src/directives/directiveSelectAll';
+
 
 const { currencify } = useCurrency();
 const storeEntries = useStoreEntries();
