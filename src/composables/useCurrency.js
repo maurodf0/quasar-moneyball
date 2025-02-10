@@ -1,3 +1,6 @@
+import { useStoreSettings } from "src/stores/storeSettings" 
+const { settings } = useStoreSettings();
+
 export default function useCurrency() {
 
     const currencify = (amount) => {

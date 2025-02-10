@@ -25,7 +25,7 @@
       <q-item tag="label" v-ripple>
         <q-item-section>
         <q-input 
-          v-select-all
+            v-select-all
             v-model="settings.currencySymbol"
             label="Currency Symbol"
             outlined="true"
