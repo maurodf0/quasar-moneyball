@@ -9,12 +9,12 @@ const settings = reactive({
     promptToDelete: true,
     showRunningBalance: false,
     currencySymbol: '€',
-    darkMode: false,
+    darkMode: true,
 });
 
 watch(() => settings.darkMode, (value) => {
   Dark.set(value);
-})
+}, {immediate: true});
 
 
 
