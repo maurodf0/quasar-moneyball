@@ -1,7 +1,9 @@
 <template>
 
     <q-slide-item 
-        
+        :class="!entry.paid 
+        ? useLightOrDark('bg-white', 'bg-black') 
+        : useLightOrDark('bg-grey-2', 'bg-grey-9')" 
         left-color="positive" 
         right-color="negative" 
         @left="onLeft" 
@@ -96,6 +98,7 @@ import { useQuasar } from 'quasar'
 import { useStoreEntries } from 'src/stores/storeEntries';
 import useCurrency from '../../composables/useCurrency';
 import useAmountColorClass from 'src/composables/useAmountColorClass';
+import useLightOrDark from 'src/composables/useLightOrDark';
 import { store } from 'quasar/wrappers';
 import vSelectAll from 'src/directives/directiveSelectAll';
 
