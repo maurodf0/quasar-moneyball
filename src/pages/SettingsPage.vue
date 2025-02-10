@@ -35,6 +35,12 @@
 
       <q-separator spacer />
       <q-item-label header>Apparence</q-item-label>
+
+       <div class="q-gutter-sm">
+      <q-radio v-model="settings.darkMode" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="line" label="Line" />
+      <q-radio v-model="settings.darkMode" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="rectangle" label="Rectangle" />
+      <q-radio v-model="settings.darkMode" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="ellipse" label="Ellipse" />
+    </div>
      
     </q-list>
   </div>
