@@ -25,7 +25,7 @@
       <q-item tag="label" v-ripple>
         <q-item-section>
         <q-input 
-            v-select-all
+          v-select-all
             v-model="settings.currencySymbol"
             label="Currency Symbol"
             outlined="true"
@@ -33,41 +33,8 @@
         </q-item-section>
       </q-item>
 
-     
-    </q-list>
-
-        <q-list bordered padding>
-      <q-item-label header>Dark Mode</q-item-label>
-
-      <q-item tag="label" v-ripple>
-        <q-item-section>
-          <q-item-label>Prompt to Delete</q-item-label>
-        </q-item-section>
-        <q-item-section side >
-          <q-toggle color="blue" v-model="settings.promptToDelete" val="battery" />
-        </q-item-section>
-      </q-item>
-
-      <q-item tag="label" v-ripple>
-        <q-item-section>
-          <q-item-label>Show Running Balance</q-item-label>
-        </q-item-section>
-        <q-item-section side >
-          <q-toggle color="blue" v-model="settings.showRunningBalance" val="battery" />
-        </q-item-section>
-      </q-item>
-
-      <q-item tag="label" v-ripple>
-        <q-item-section>
-        <q-input 
-            v-select-all
-            v-model="settings.currencySymbol"
-            label="Currency Symbol"
-            outlined="true"
-            />
-        </q-item-section>
-      </q-item>
-
+      <q-separator spacer />
+      <q-item-label header>Apparence</q-item-label>
      
     </q-list>
   </div>
