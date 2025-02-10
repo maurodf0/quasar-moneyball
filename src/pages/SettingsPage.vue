@@ -28,7 +28,7 @@
           v-select-all
             v-model="settings.currencySymbol"
             label="Currency Symbol"
-            outlined="true"
+            outlined
             />
         </q-item-section>
       </q-item>
