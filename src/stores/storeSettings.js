@@ -7,6 +7,7 @@ const settings = reactive({
     promptToDelete: true,
     showRunningBalance: false,
     currencySymbol: '€',
+    darkMode: false,
 });
 
 /* HELPERS */
