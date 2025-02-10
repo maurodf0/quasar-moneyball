@@ -37,8 +37,8 @@
       <q-item-label header>Apparence</q-item-label>
 
        <div class="q-gutter-sm">
-      <q-radio v-model="settings.darkMode" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="false" label="Light" />
-      <q-radio v-model="settings.darkMode" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="true" label="Dark" />
+      <q-radio v-model="settings.darkMode" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" :val="false" label="Light" />
+      <q-radio v-model="settings.darkMode" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" :val="true" label="Dark" />
       <q-radio v-model="settings.darkMode" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="auto" label="Auto" />
     </div>
      
