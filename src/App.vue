@@ -7,7 +7,8 @@
     e.preventDefault();
   });
   import { onMounted } from 'vue';
-  import { LoadSettings } from 'src/stores/storeSettings';
+  import useStoreSettings from 'src/stores/storeSettings';
+  const { LoadSettings } = useStoreSettings();
   
   onMounted(() => {
       LoadSettings();
