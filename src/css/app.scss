@@ -9,6 +9,10 @@
   }
 }
 
+.body--dark .bg-primary {
+  background-color: $primary-dark;
+}
+
 input::--webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
