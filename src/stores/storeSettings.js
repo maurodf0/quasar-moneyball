@@ -1,6 +1,6 @@
 import { reactive, watch } from 'vue';
 import { defineStore } from 'pinia';
-import { Dark } from 'quasar';
+import { Dark, LocalStorage } from 'quasar';
 
 
 export const useStoreSettings = defineStore("settings", () => {
@@ -13,9 +13,13 @@ const settings = reactive({
 });
 
 watch(settings, (value) => {
- localStorage.setItem('settings', JSON.stringify(value));
+  SaveSettings();
 }
 );
+
+const SaveSettings = () => {
+    LocalStorage.set('settings', settings);
+};
 
 watch(() => settings.darkMode, (value) => {
   Dark.set(value);
