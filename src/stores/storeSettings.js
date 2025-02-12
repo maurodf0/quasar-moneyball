@@ -21,6 +21,13 @@ const SaveSettings = () => {
     LocalStorage.set('settings', settings);
 };
 
+const LoadSettings = () => {
+    const savedSettings = LocalStorage.getItem('settings');
+    if(settings) {
+        Object.assign(settings, savedSettings);
+    }
+}
+
 watch(() => settings.darkMode, (value) => {
   Dark.set(value);
 }, {immediate: true});
@@ -29,7 +36,7 @@ watch(() => settings.darkMode, (value) => {
 
   return {
     settings,
-
+    LoadSettings
   };
 
 });
