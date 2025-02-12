@@ -141,6 +141,7 @@ const getEntryIndexByID = (entryID) => {
     balancePaid,
     options,
     sortEnd,
+    loadEntries
   };
 
 });
