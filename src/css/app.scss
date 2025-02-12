@@ -20,9 +20,9 @@ input::-webkit-inner-spin-button {
 }
 
 .body--dark .q-slide-item {
-  border:1px solid rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
 }
-.entries .q-slide-item {
+.body--light .q-slide-item {
   border: 1px solid #e0e0e0;
 
   &:not(:first-child) {
