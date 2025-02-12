@@ -46,7 +46,7 @@ const loadEntries = () => {
   const savedEntries = LocalStorage.getItem('entries');
 
   if(savedEntries) {
-    entries.value = savedEntries;
+    Object.assign(entries.value, savedEntries);
   }
 }
 
