@@ -12,6 +12,11 @@ const settings = reactive({
     darkMode: true,
 });
 
+watch(settings, (value) => {
+ localStorage.setItem('settings', JSON.stringify(value));
+}
+);
+
 watch(() => settings.darkMode, (value) => {
   Dark.set(value);
 }, {immediate: true});
