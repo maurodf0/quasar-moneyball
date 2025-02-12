@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
-import { ref, computed, reactive } from "vue";
-import { uid, Notify } from 'quasar'
+import { ref, computed, reactive, watch } from "vue";
+import { uid, Notify, LocalStorage } from 'quasar'
 
 export const useStoreEntries = defineStore("entries", () => {
 
@@ -33,6 +33,22 @@ const nameRef = ref(null);
     paid: false
   },
 ]);
+
+watch(entries.value, (value) => {
+  saveEntries();  
+})
+
+const saveEntries = () => {
+  LocalStorage.set('entries', entries.value);
+}
+
+const loadEntries = () => {
+  const savedEntries = LocalStorage.getItem('entries');
+
+  if(savedEntries) {
+    entries.value = savedEntries;
+  }
+}
 
     const runningBalances = computed(() => {
       let runningBalances = [],
