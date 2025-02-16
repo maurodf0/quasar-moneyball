@@ -41,7 +41,7 @@ const loadEntries = () => {
     })
 
 const options = reactive({
-  sort: true,
+  sort: false,
 });
 
 const  balance = computed(() => {
