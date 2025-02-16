@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref, computed, reactive, watch } from "vue";
+import { ref, computed, reactive, watch, nextTick } from "vue";
 import { uid, Notify, LocalStorage } from 'quasar'
 
 export const useStoreEntries = defineStore("entries", () => {
