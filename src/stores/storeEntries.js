@@ -7,32 +7,7 @@ export const useStoreEntries = defineStore("entries", () => {
 
 const nameRef = ref(null);
 
- const entries = ref([
-  {
-    id: 'id1',
-    name: 'Salary',
-    amount: 4999.99,
-    paid: false
-  },
-  {
-    id: 'id2',
-    name: 'Rent',
-    amount: -999,
-    paid: false
-  },
-  {
-    id: 'id3',
-    name: 'Phone',
-    amount: -19.99,
-    paid: false
-  },
-  {
-    id: 'id4',
-    name: 'Unknown',
-    amount: 0,
-    paid: false
-  },
-]);
+ const entries = ref([]);
 
 watch(entries.value, (value) => {
   saveEntries();  
