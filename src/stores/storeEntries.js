@@ -78,13 +78,17 @@ const addEntry = (addEntryForm) => {
 const deleteEntry = (entryID) => {
   const index = getEntryIndexByID(entryID);
  entries.value.splice(index, 1);
-
+  rmeoveSlideItemIfExists(entryID);
   Notify.create({
           message: 'Entry Deleted',
           color: 'positive',
           position: 'top-right',
           icon: 'delete',
         })
+}
+
+const rmeoveSlideItemIfExists = (entryID) => {
+  console.log(entryID);
 }
 
 
