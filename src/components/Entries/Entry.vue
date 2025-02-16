@@ -4,6 +4,7 @@
         :class="!entry.paid 
         ? useLightOrDark('bg-white', 'bg-black') 
         : useLightOrDark('bg-grey-2', 'bg-grey-9')" 
+        :id="`id-${entry.id}`"
         left-color="positive" 
         right-color="negative" 
         @left="onLeft" 
