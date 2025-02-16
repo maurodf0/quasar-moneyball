@@ -88,7 +88,12 @@ const deleteEntry = (entryID) => {
 }
 
 const rmeoveSlideItemIfExists = (entryID) => {
-  console.log(entryID);
+  nextTick(() => {
+    const slideItem = document.querySelector(`#id-${entryID}`);
+    if(slideItem) {
+      slideItem.remove();
+    }
+  });
 }
 
 
