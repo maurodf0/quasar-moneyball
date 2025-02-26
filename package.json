@@ -15,8 +15,8 @@
     "dev:android": "quasar dev -m capacitor -T android",
     "build": "quasar build",
     "build:macos": "quasar build -m electron",
-    "build:ios": "quasar build -m capacitor -T ios",
-    "build:android": "quasar build -m capacitor -T android",
+    "build:ios": "quasar build -m capacitor -T ios --ide",
+    "build:android": "quasar build -m capacitor -T android --ide",
     "postinstall": "quasar prepare"
   },
   "dependencies": {
