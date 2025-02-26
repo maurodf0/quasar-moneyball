@@ -12,6 +12,8 @@
     "dev": "quasar dev",
     "dev:macos": "quasar dev -m electron",
     "dev:ios": "quasar dev -m capacitor -T ios",
+    "dev:android": "quasar dev -m capacitor -T android",
+    
     "build": "quasar build",
     "postinstall": "quasar prepare"
   },
