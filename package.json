@@ -10,6 +10,7 @@
     "test": "echo \"No test specified\" && exit 0",
     "icons": "icongenie generate -i app-icon.png --skip-trim",
     "dev": "quasar dev",
+    "dev:macos": "quasar dev -m electron",
     "build": "quasar build",
     "postinstall": "quasar prepare"
   },
