@@ -11,7 +11,6 @@
     "icons": "icongenie generate -i app-icon.png --skip-trim",
     "dev": "quasar dev",
     "dev:macos": "quasar dev -m electron",
-    aaa
     "build": "quasar build",
     "postinstall": "quasar prepare"
   },
